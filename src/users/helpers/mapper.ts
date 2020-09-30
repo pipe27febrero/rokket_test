@@ -1,8 +1,9 @@
 import { UserDto } from "../dtos/user.dto";
-import { User } from "../schemas/user.schema";
+import { UserDocument } from "../schemas/user.schema";
 
-export const toUserDto = (user: User): UserDto => {
-    const { _id , firstName, lastName, email } = user
+export const toUserDto = (userDocument: UserDocument): UserDto => {
+    if(!userDocument) return null
+    const { _id , firstName, lastName, email } = userDocument
     const userDto: UserDto = {
         _id,
         firstName,
@@ -12,4 +13,4 @@ export const toUserDto = (user: User): UserDto => {
     return userDto
 }
 
-export const toUsersDto = (users : Array<User>) : Array<UserDto> => users.map(user => toUserDto(user))
+export const toUsersDto = (usersDocument : Array<UserDocument>) : Array<UserDto> => usersDocument.map(userDocument => toUserDto(userDocument))
