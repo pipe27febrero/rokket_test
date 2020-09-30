@@ -1,10 +1,13 @@
-import { Controller, Post, UseGuards , Request, HttpCode, Body, BadRequestException } from '@nestjs/common';
+import { Controller, Post, UseGuards , Request, HttpCode, Body, BadRequestException, Get, Req } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { UserCreateDto } from 'src/users/dtos/user-create.dto';
 import { UserDto } from 'src/users/dtos/user.dto';
 import { toUserDto } from 'src/users/helpers/mapper';
 import { UsersService } from 'src/users/users.service';
 import { AuthService } from './auth.service';
+import { UserBody } from './interfaces/user-body.interface';
+import { LoginResponseDto } from './dtos/login-response.dto';
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller()
 export class AuthController {
@@ -14,9 +17,14 @@ export class AuthController {
     @Post('login')
     @UseGuards(AuthGuard('local'))
     @HttpCode(200)
-    async login(@Request() req)
+    async login(@Request() req) : Promise<LoginResponseDto>
     {
-        return req.user
+        const userBody : UserBody = req.user
+        const accessToken = this.authService.signUserJWT(userBody)
+        const loginResponseDto : LoginResponseDto = {
+            accessToken
+        }
+        return loginResponseDto
     }
 
     @Post('signup')
@@ -33,7 +41,6 @@ export class AuthController {
        userCreateDto.password = await this.authService.hashPassword(password)
        const userDocument = await this.usersService.create(userCreateDto)
        const userDto = toUserDto(userDocument)
-
        return userDto
     }
     
