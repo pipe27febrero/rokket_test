@@ -7,7 +7,8 @@ import { UsersService } from 'src/users/users.service';
 import { AuthService } from './auth.service';
 import { UserBody } from './interfaces/user-body.interface';
 import { LoginResponseDto } from './dtos/login-response.dto';
-import { JwtAuthGuard } from './jwt-auth.guard';
+import { LoginDto } from './dtos/login.dto';
+import { ApiCreatedResponse, ApiResponse } from '@nestjs/swagger';
 
 @Controller()
 export class AuthController {
@@ -16,8 +17,10 @@ export class AuthController {
 
     @Post('login')
     @UseGuards(AuthGuard('local'))
+    @ApiResponse({ status: 200, description: 'User authenticated successfully',type: LoginResponseDto})
+    @ApiResponse({ status: 401, description: 'Unauthorized.'})
     @HttpCode(200)
-    async login(@Request() req) : Promise<LoginResponseDto>
+    async login(@Request() req,@Body() loginDto : LoginDto) : Promise<LoginResponseDto>
     {
         const userBody : UserBody = req.user
         const accessToken = this.authService.signUserJWT(userBody)
@@ -28,6 +31,8 @@ export class AuthController {
     }
 
     @Post('signup')
+    @ApiCreatedResponse({ description: 'User registration was successfully',type: UserDto})
+    @ApiResponse({ status: 400, description: 'Bad request'})
     async singup(@Body() userCreateDto : UserCreateDto) : Promise<UserDto>
     {
        const { email , password } = userCreateDto
@@ -43,6 +48,6 @@ export class AuthController {
        const userDto = toUserDto(userDocument)
        return userDto
     }
-    
+
 }
 
