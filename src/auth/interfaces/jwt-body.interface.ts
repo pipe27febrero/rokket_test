@@ -1,5 +1,5 @@
 export interface JWTBody{
-    _id: string;
+    sub: string;
     firstName: string;
     lastName: string;
     email: string;

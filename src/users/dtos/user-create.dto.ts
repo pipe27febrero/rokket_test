@@ -9,4 +9,6 @@ export class UserCreateDto{
     lastName: string;
     @ApiProperty()
     password: string;
+    @ApiProperty({required : false})
+    phones?: string[];
 }

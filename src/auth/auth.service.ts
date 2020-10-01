@@ -31,7 +31,7 @@ export class AuthService {
     }
 
     signUserJWT(userBody : UserBody) : string
-    {
+    {    
         const accessToken  = this.jwtService.sign(userBody)
         return accessToken
     }

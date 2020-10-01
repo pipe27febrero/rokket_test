@@ -22,7 +22,13 @@ export class AuthController {
     @HttpCode(200)
     async login(@Request() req,@Body() loginDto : LoginDto) : Promise<LoginResponseDto>
     {
-        const userBody : UserBody = req.user
+        const { _id , firstName , lastName , email } = req.user
+        const userBody : UserBody = {
+            sub: _id,
+            firstName,
+            lastName,
+            email
+        }
         const accessToken = this.authService.signUserJWT(userBody)
         const loginResponseDto : LoginResponseDto = {
             accessToken

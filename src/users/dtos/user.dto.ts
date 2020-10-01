@@ -9,4 +9,6 @@ export class UserDto{
     firstName: string;
     @ApiProperty()
     lastName: string;
+    @ApiProperty({required : false})
+    phones?: string[];
 }
