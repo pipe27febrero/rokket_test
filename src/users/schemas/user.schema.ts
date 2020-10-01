@@ -13,6 +13,8 @@ export class User{
     lastName: string;
     @Prop()
     password: string;
+    @Prop([String])
+    phones: string[]
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)
