@@ -4,14 +4,13 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
   const options = new DocumentBuilder()
-  .setTitle('Rokket API!')
-  .setDescription('Rokket API description')
-  .setVersion('1.0.0')
-  .addTag('Users')
-  .addBearerAuth()
-  .build();
+    .setTitle('Rokket API!')
+    .setDescription('Rokket API description')
+    .setVersion('1.0.0')
+    .addTag('Users')
+    .addBearerAuth()
+    .build();
 
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);

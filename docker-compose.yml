@@ -2,16 +2,16 @@ version: '3.8'
 services:
   rokket_backend:
     build:
-        context: .
+      context: .
     restart: always
-    ports: 
-        - '3000:3000'
-    depends_on: 
-        - mongo
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
   mongo:
     image: mongo
     restart: always
     volumes:
-        - mongo-data:/data/db
+      - mongo-data:/data/db
 volumes:
-    mongo-data:
+  mongo-data:
