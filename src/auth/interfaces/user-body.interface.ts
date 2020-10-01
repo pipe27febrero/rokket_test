@@ -1,4 +1,4 @@
-export interface UserBody{
+export interface UserBody {
     sub: string;
     email: string;
     firstName: string;

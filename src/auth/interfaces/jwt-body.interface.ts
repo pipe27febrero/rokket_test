@@ -1,4 +1,4 @@
-export interface JWTBody{
+export interface JWTBody {
     sub: string;
     firstName: string;
     lastName: string;
