@@ -49,6 +49,7 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+Open http://localhost:3000 to check project and http://localhost:3000/api to check documentation
 ## Deploy with Containers 📦📦📦📦
 - Configure environment variables </br>
     copy .env.example in the source project and rename by .env , write your values or for testing purpose keep the same values </br>
