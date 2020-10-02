@@ -49,3 +49,19 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## Deploy with Containers 📦📦📦📦
+- Configure environment variables </br>
+    copy .env.example in the source project and rename by .env , write your values or for testing purpose keep the same values </br>
+For example: .env file </br>
+
+```bash
+JWT_SECRET=HereYourSecretPhraseToEncrypt
+MONGO_HOST=mongo
+MONGO_PORT=27017
+MONGO_DATABASE=databaseName
+```
+Deploy containers in the root project running this command
+```bash
+# development
+$ docker-compose up -d --build
+```
