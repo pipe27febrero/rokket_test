@@ -67,3 +67,13 @@ $ docker-compose up -d --build
 ```
 ## Check demostration of api on my website
    - https://api.test.digitalaccount.store/api/   (Open API Documentation) you can make requests to endpoints here!
+## Questions
+  - What is the difference between JWT and OAuth authentication? </br>
+      - Spanish </br>
+         JWT es un standard para la generacion de token , este es utilizado para conceder al portador privilegios de accesos, lo que se define es la forma del token.
+         oauth es un protocolo de authorización que explica el flujo requerido para que un tercero pueda acceder a los recursos en nombre del dueño de esos recursos.
+         resumiendo jwt define la forma standarizada de crear un token y oauth permite el acceso a recursos en nombre del dueño de un recurso
+      - English </br>
+          JWT is an standard to generate tokens, this is used to grant privileges access to the bearer , it defines shape of token.
+          oauth is authorization protocol that explain required flow to a third party can access to resources behalf owner of this resources. 
+          in summary jwt define a standard way to create token and oauth allow access to resources behalf resource owner
