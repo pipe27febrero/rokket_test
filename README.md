@@ -87,4 +87,14 @@ $ docker-compose up -d --build
       asymetric encryption is a process where a pair of keys are generated through some pair key generation algorithm,one know as public key and the other private key.
       public key can be used for anyone to encrypt a message. this message can be descrypt only by the private key bearer.
       in the opposite case private key bearer can encrypt a message and thourgh public key by decrypt it can be verified that it was sign by private key bearer. 
-
+ - What are the main differences between a GraphQL and REST API ?
+    - Spanish </br>
+         - Graphql tiene un solo endpoint donde se envian todas las consultas mientras que REST tiene un conjunto de endpoints que hacen uso de los verbos HTTP para hacer determinadas acciones sobre los recursos.
+         - en Graphql se anuncia la disponibilidad de los recursos y quien los consume es el que determina lo que necesita, en REST el servidor define la forma de la respuesta y suele venir información extra a la que requiere el consumidor de la API.
+         - Para el acceso a recursos anidados en REST generalmente se requiere consultar a mas de una ruta mientras que en graphql podemos solicitar toda esta información en una sola consulta.
+         - En Rest cualquier cambio puede quebrar el código por lo cual es requerido un versionamiento, en graphql solo se devuelve la información solicitada por lo que al agregar nuevas características solo estaremos ampliando la cantidad de recursos disponibles que el usuario puede obtener lo que no romperia el codigo por lo que no requiere de versionamiento.
+    - English </br>
+        - Graphql has only one endpoint where all queries are sent while REST has a set of endpoints that makes use of HTTP verbs to make a specifics actions over resources.
+        - Graphql announces availability of resources and consumer determines what it needs, in Rest server defines response shape and additional information usually comes to which consumer does not requires.
+        - To access nested resources in REST, it is generally required to consult more than one route, while in graphql we can request all this information in a single query.
+        - In Rest, any change can break the code for which a versioning is required, in graphql only the requested information is returned so when adding new features we will only be expanding the amount of available resources that the user can obtain, which would not break the code so it does not require versioning.
