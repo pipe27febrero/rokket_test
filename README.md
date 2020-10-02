@@ -79,7 +79,7 @@ $ docker-compose up -d --build
           oauth is authorization protocol that explain required flow to a third party can access to resources behalf owner of this resources. 
           in summary jwt define a standard way to create token and oauth define flow access to resources behalf resource owner
   - Explain how asymmetric encryption works. </br>
-    - Spanish
+    - Spanish </br>
        la encriptación asimétrica es un proceso donde se generan un par de llaves a traves de un algoritmo. resultando la llave publica y la llave privada. la llave pública generada puede ser utilizada por cualquier persona para encriptar un mensaje. este mensaje puede ser desencriptado solo por el portador de la llave privada.
        en el caso opuesto el portador de la llave privada puede encriptar un mensaje y mediante la llave pública al desencriptarlo se podrá comprobar que fue firmado por el portador de la llave.
       
