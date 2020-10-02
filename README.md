@@ -13,6 +13,7 @@ Rokket API 1.0.0
   - passport (to implement local and jwt strategies)
   - mongoose (object modeling data for mongodb)
   - swagger (to document endpoints in open api 3)
+  - bcrypt (to hash password and verify validity)
 ## Installation
 Clone repository
 ```bash
