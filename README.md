@@ -83,7 +83,7 @@ $ docker-compose up -d --build
        la encriptación asimétrica es un proceso donde se generan un par de llaves a traves de un algoritmo. resultando la llave pública y la llave privada. la llave pública generada puede ser utilizada por cualquier persona para encriptar un mensaje. este mensaje puede ser desencriptado solo por el portador de la llave privada.
        en el caso opuesto el portador de la llave privada puede encriptar un mensaje y mediante la llave pública al desencriptarlo se podrá comprobar que fue firmado por el portador de la llave.
       
-    - English
+    - English </br>
       asymetric encryption is a process where a pair of keys are generated through some pair key generation algorithm,one know as public key and the other private key.
       public key can be used for anyone to encrypt a message. this message can be descrypt only by the private key bearer.
       in the opposite case private key bearer can encrypt a message and thourgh public key by decrypt it can be verified that it was sign by private key bearer. 
